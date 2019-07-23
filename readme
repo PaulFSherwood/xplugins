@@ -1,1 +1,17 @@
 trying out new plugins
+
+
+Variables to try
+Settings from X-Plane datarefs				
+				
+Switch/button/knob		dataRef	Values	Checked
+Fuel cutoff Left		1-sim/fuel/fuelCutOffLeft			2,1,0	
+Fuel cutoff Right		1-sim/fuel/fuelCutOffRight			2,1,0
+	
+EICAS STATUS PAGE				
+Display Engine status Left		1-sim/eicas/stat1but		1,0	
+Display Engine status Right		1-sim/eicas/stat2but		1,0	
+Computer select L/Auto/R		1-sim/eicas/compSelector	0,1,2	
+Wheel Well test					1-sim/fire/1/testButton		0,1	
+NOT USED						1-sim/fire/2/testButton		0,1	
+ENG/APU Cargo test				1-sim/fire/3/testButton		0,1	
