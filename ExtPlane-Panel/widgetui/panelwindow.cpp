@@ -76,7 +76,8 @@ PanelWindow::PanelWindow() : QGraphicsView(), scene(), statusMessage() {
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setSceneRect(0, 0, width(), height());
-    setBackgroundBrush(QBrush(Qt::black));
+
+    setBackgroundBrush(QBrush(QImage(":/images/pedestal.png")));
     setFrameShape(QFrame::NoFrame);
 
     // Settings dialog

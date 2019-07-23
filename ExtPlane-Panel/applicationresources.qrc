@@ -6,5 +6,6 @@
         <file>images/DR400_Battery_Amp.png</file>
         <file>images/DR400_engine_generic.png</file>
         <file>images/DR400_engine_generic_needle.png</file>
+        <file>images/pedestal.png</file>
     </qresource>
 </RCC>
