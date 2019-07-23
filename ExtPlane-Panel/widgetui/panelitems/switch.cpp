@@ -13,17 +13,18 @@ REGISTER_WITH_PANEL_ITEM_FACTORY(Switch,"switches/generic");
 Switch::Switch(ExtPlanePanel *panel, ExtPlaneConnection *conn) :
         PanelItem(panel, PanelItemTypeSwitch, PanelItemShapeRectangular),
         _client(this, typeName(), conn) {
-    _client.createClient();
-    conn->registerClient(&_client);
-    connect(&_client, SIGNAL(refChanged(QString,double)), this, SLOT(valueChanged(QString,double)));
-    _value = false;
-    _label = "Switch";
-    _ref = 0;
-    setSize(100,30);
+            _client.createClient();
+            conn->registerClient(&_client);
+            connect(&_client, SIGNAL(refChanged(QString,double)), this, SLOT(valueChanged(QString,double)));
+            _value = false;
+            _label = "Switch";
+            _ref = 0;
+            setSize(100,30);
 }
 
 void Switch::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
     setupPainter(painter);
+
     painter->setBrush(Qt::gray);
     painter->setPen(Qt::gray);
 
@@ -31,6 +32,7 @@ void Switch::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
     painter->drawEllipse(0, height()/2-circleSize/2, circleSize, circleSize);
 
     painter->save();
+
     switchWidth = height()/3;
     painter->translate(switchWidth/2, height()/2);
 
@@ -64,6 +66,7 @@ void Switch::storeSettings(QSettings &settings) {
 
 void Switch::loadSettings(QSettings &settings) {
     PanelItem::loadSettings(settings);
+    //setButtonId(settings.value("id", 0).toInt());
     setLabel(settings.value("label", "Switch").toString());
     setRef(settings.value("dataref", "").toString());
 }
@@ -123,4 +126,5 @@ void Switch::valueChanged(QString ref, double newValue) {
     DEBUG << ref << newValue;
     Q_ASSERT(ref==_refname);
     _value = newValue != 0;
+    qDebug() << "Value Changed: " << _value << endl;
 }

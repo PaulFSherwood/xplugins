@@ -1,0 +1,34 @@
+sudo: required
+services:
+  - docker
+language: cpp
+compiler:
+- gcc
+before_install:
+ - docker build -t extplane .
+script: 
+ - docker run -it -v $PWD:/ExtPlane -w /ExtPlane extplane ./scripts/ci-build.sh
+branches:
+  only:
+  - master
+notifications:
+  email:
+    recipients:
+      - ville.ranki@iki.fi
+      - dan.krusi@nerves.ch
+    on_success: change
+    on_failure: change
+cache:
+  directories:
+  - ../XPlaneSDK
+deploy:
+  provider: releases
+  api_key:
+    secure: mGPELl1Bc2nkK6JPsyorKkYC7uAwP4H5AfGev5vpIoOfC0Kp/ubRNVKE3771/tzPw4P2QpYDTvl9dL0hGJcoVEUeomRuBoNViueAzpZVJQSNo68lbse+SAMi2JHSs+p0uyDdIVY51Hu5NFQYnDWvxIgbv4RF8mztymdSS1CtDlU=
+  file:
+    - "extplane-plugin.zip"
+    - "extplane-transformer.zip"
+  skip_cleanup: true
+  on:
+    repo: vranki/ExtPlane
+

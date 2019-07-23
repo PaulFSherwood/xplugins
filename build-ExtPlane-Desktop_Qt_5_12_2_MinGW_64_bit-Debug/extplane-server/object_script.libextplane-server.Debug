@@ -1,0 +1,21 @@
+CREATE ..\..\ExtPlane\extplane-server\libextplane-server.a
+ADDMOD debug\datarefprovider.o
+ADDMOD debug\dataref.o
+ADDMOD debug\floatdataref.o
+ADDMOD debug\floatarraydataref.o
+ADDMOD debug\intdataref.o
+ADDMOD debug\doubledataref.o
+ADDMOD debug\intarraydataref.o
+ADDMOD debug\datadataref.o
+ADDMOD debug\tcpserver.o
+ADDMOD debug\tcpclient.o
+ADDMOD debug\moc_dataref.o
+ADDMOD debug\moc_floatdataref.o
+ADDMOD debug\moc_floatarraydataref.o
+ADDMOD debug\moc_intdataref.o
+ADDMOD debug\moc_doubledataref.o
+ADDMOD debug\moc_intarraydataref.o
+ADDMOD debug\moc_datadataref.o
+ADDMOD debug\moc_tcpserver.o
+ADDMOD debug\moc_tcpclient.o
+SAVE

@@ -1,0 +1,15 @@
+main.o
+dataref.o
+floatdataref.o
+datarefprovider.o
+extplanetransformer.o
+flightgeardatasource.o
+condordatasource.o
+basictcpclient.o
+datasource.o
+qrc_qml.o
+moc_extplanetransformer.o
+moc_flightgeardatasource.o
+moc_condordatasource.o
+moc_basictcpclient.o
+moc_datasource.o

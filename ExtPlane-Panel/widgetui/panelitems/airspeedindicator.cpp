@@ -1,5 +1,6 @@
 #include "airspeedindicator.h"
 #include <QLabel>
+#include <QDebug>
 #include "../needles/gabalancedneedle.h"
 #include "../widgets/velocityunitcombobox.h"
 #include "../widgets/numberinputlineedit.h"
@@ -10,7 +11,7 @@ AirspeedIndicator::AirspeedIndicator(ExtPlanePanel *panel, ExtPlaneConnection *c
     _client(this, typeName(), conn), interpolator(0, 5) {
     _client.createClient();
     conn->registerClient(&_client);
-    _client.subscribeDataRef("sim/cockpit2/gauges/indicators/airspeed_kts_pilot", 0.3);
+    _client.subscribeDataRef("sim/cockpit2/gauges/indicators/calibrated_airspeed_kts_pilot", 0.3);
     // _client.subscribeDataRef("simulated", 1);
     connect(&_client, SIGNAL(refChanged(QString,double)), &interpolator, SLOT(valueChanged(QString,double)));
     connect(&interpolator, SIGNAL(interpolatedValueChanged(QString,double)), this, SLOT(speedChanged(QString,double)));
@@ -88,6 +89,7 @@ void AirspeedIndicator::paintArc(QPainter *painter,QColor color, double start, d
 
 void AirspeedIndicator::speedChanged(QString name, double speed) {
     Q_UNUSED(name);
+    //qDebug()  << "-Name: " << name  << "|| " << "-Speed: " << speed;
     setValue(Units::convertSpeed(VELOCITY_KTS, units, speed));
 }
 

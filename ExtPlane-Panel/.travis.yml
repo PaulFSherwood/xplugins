@@ -1,0 +1,29 @@
+sudo: required
+services:
+  - docker
+language: cpp
+compiler:
+- gcc
+before_install:
+ - docker build -t extplane-panel .
+script:
+ - docker run -it -v $PWD:/ExtPlane-Panel -w /ExtPlane-Panel extplane-panel ./scripts/ci-build.sh
+branches:
+  only:
+  - master
+notifications:
+  email:
+    recipients:
+      - ville.ranki@iki.fi
+      - dan.krusi@nerves.ch
+    on_success: change
+    on_failure: change
+deploy:
+  provider: releases
+  api_key:
+    secure: eWDl6+Wr4aeL74G1Xaid7sbwH59M7PW0Jdw2vU+7Erp7W29x3T6semta19xscYK/bJuZT6oV7j/0o1BOYdbvLkXs8KuCiwyGIBiOxGikpFKOaLpGWwKAm2BHZ/YXoeELPtvI2AUTGOPGJYuOmdo3vs4Wh621Hmc3UrdjRlnCkUo=
+  file: build/extplane-panel.zip
+  skip_cleanup: true
+  on:
+    repo: vranki/ExtPlane-Panel
+  

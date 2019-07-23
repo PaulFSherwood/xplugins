@@ -1,0 +1,21 @@
+CREATE release\libextplane-client-qt.a
+ADDMOD release\dataref.o
+ADDMOD release\simulatedextplaneconnection.o
+ADDMOD release\extplaneconnection.o
+ADDMOD release\extplaneclient.o
+ADDMOD release\clientdatarefprovider.o
+ADDMOD release\clientdataref.o
+ADDMOD release\alternatingsimulateddataref.o
+ADDMOD release\fixedsimulateddataref.o
+ADDMOD release\simulateddataref.o
+ADDMOD release\basictcpclient.o
+ADDMOD release\moc_dataref.o
+ADDMOD release\moc_simulatedextplaneconnection.o
+ADDMOD release\moc_extplaneconnection.o
+ADDMOD release\moc_extplaneclient.o
+ADDMOD release\moc_clientdataref.o
+ADDMOD release\moc_alternatingsimulateddataref.o
+ADDMOD release\moc_fixedsimulateddataref.o
+ADDMOD release\moc_simulateddataref.o
+ADDMOD release\moc_basictcpclient.o
+SAVE

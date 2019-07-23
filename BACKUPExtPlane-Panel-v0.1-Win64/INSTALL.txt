@@ -1,0 +1,17 @@
+To use ExtPlane-Panel you must first install the ExtPlane plugin for X-Plane.
+
+You can run ExtPlane-Panel directly without installing it either on the 
+same machine as X-Plane or on a separate networked machine.
+
+If you have problems, please see the included README.md or visit the
+official page:
+
+https://github.com/vranki/ExtPlane-Panel
+
+You can download the plugin from the official website:
+
+https://github.com/vranki/ExtPlane
+
+Version v0.1
+Package built Tue May  6 14:57:40 CEST 2014.
+

@@ -9,14 +9,16 @@ ExtPlaneClient::ExtPlaneClient(bool simulated) : QObject()
   , m_simulated(simulated)
 {
     _instance = this;
+    qDebug() << "1: simulated:" << simulated;
 }
 
 ExtPlaneClient::ExtPlaneClient(QObject *parent, QString name, bool simulated) : QObject(parent)
   , m_name(name)
   , m_connection(nullptr)
-  , m_simulated(simulated)
+  , m_simulated(simulated = false)
 {
     _instance = this;
+    qDebug() << "2: simulated:" << simulated;
 }
 
 void ExtPlaneClient::createClient()
@@ -58,6 +60,7 @@ ClientDataRef* ExtPlaneClient::subscribeDataRef(QString name, double accuracy) {
     connect(ref, &ClientDataRef::changed, this, &ExtPlaneClient::cdrChanged);
     connect(ref, &ClientDataRef::destroyed, this, &ExtPlaneClient::refDestroyed);
     m_dataRefs.append(ref);
+    // qDebug() << name << " SUBSCRIBED" << endl;
     return ref;
 }
 
@@ -174,7 +177,8 @@ void ExtPlaneClient::setSimulated(bool simulated)
 
     qDebug() << Q_FUNC_INFO << simulated;
 
-    m_simulated = simulated;
+    // m_simulated = simulated;
+    m_simulated = false;
     m_connection = nullptr;
     emit datarefProviderChanged(m_connection);
     if(m_simulated) {

@@ -1,4 +1,5 @@
 TEMPLATE = subdirs
+
 SUBDIRS = extplane-server \
     clients/extplane-client-qt
 CONFIG += ordered
@@ -19,3 +20,25 @@ versionAtLeast(QT_VERSION, 5.8.0) {
 }
 
 OTHER_FILES += README.md clients/extplane-client-qt/README
+
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/clients/extplane-client-qt/release/ -lextplane-client-qt
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/clients/extplane-client-qt/debug/ -lextplane-client-qt
+
+INCLUDEPATH += $$PWD/../XPlaneSDK/Libraries/Win
+DEPENDPATH += $$PWD/../XPlaneSDK/Libraries/Win
+
+win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$OUT_PWD/clients/extplane-client-qt/release/libextplane-client-qt.a
+else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$OUT_PWD/clients/extplane-client-qt/debug/libextplane-client-qt.a
+else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$OUT_PWD/clients/extplane-client-qt/release/extplane-client-qt.lib
+else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$OUT_PWD/clients/extplane-client-qt/debug/extplane-client-qt.lib
+
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/clients/extplane-client-qt/release/ -lextplane-client-qt
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/clients/extplane-client-qt/debug/ -lextplane-client-qt
+
+INCLUDEPATH += $$PWD/../XPlaneSDK/CHeaders/XPLM
+DEPENDPATH += $$PWD/../XPlaneSDK/CHeaders/XPLM
+
+win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$OUT_PWD/clients/extplane-client-qt/release/libextplane-client-qt.a
+else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$OUT_PWD/clients/extplane-client-qt/debug/libextplane-client-qt.a
+else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$OUT_PWD/clients/extplane-client-qt/release/extplane-client-qt.lib
+else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$OUT_PWD/clients/extplane-client-qt/debug/extplane-client-qt.lib

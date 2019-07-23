@@ -1,0 +1,21 @@
+CREATE debug\libextplane-client-qt.a
+ADDMOD debug\dataref.o
+ADDMOD debug\simulatedextplaneconnection.o
+ADDMOD debug\extplaneconnection.o
+ADDMOD debug\extplaneclient.o
+ADDMOD debug\clientdatarefprovider.o
+ADDMOD debug\clientdataref.o
+ADDMOD debug\alternatingsimulateddataref.o
+ADDMOD debug\fixedsimulateddataref.o
+ADDMOD debug\simulateddataref.o
+ADDMOD debug\basictcpclient.o
+ADDMOD debug\moc_dataref.o
+ADDMOD debug\moc_simulatedextplaneconnection.o
+ADDMOD debug\moc_extplaneconnection.o
+ADDMOD debug\moc_extplaneclient.o
+ADDMOD debug\moc_clientdataref.o
+ADDMOD debug\moc_alternatingsimulateddataref.o
+ADDMOD debug\moc_fixedsimulateddataref.o
+ADDMOD debug\moc_simulateddataref.o
+ADDMOD debug\moc_basictcpclient.o
+SAVE
