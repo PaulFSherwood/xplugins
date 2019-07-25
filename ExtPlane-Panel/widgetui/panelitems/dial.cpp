@@ -33,6 +33,8 @@ Dial::Dial(ExtPlanePanel *panel, ExtPlaneConnection *conn) :
     _positionValue4 = "";
     _positionLabel5 = "";
     _positionValue5 = "";
+    _positionLabel6 = "";
+    _positionValue6 = "";
     _dialPositions = 3;
     _dialPosition = 1;
     _dataref = NULL;
@@ -165,6 +167,8 @@ void Dial::storeSettings(QSettings &settings) {
     settings.setValue("positionValue4", _positionValue4);
     settings.setValue("positionLabel5", _positionLabel5);
     settings.setValue("positionValue5", _positionValue5);
+    settings.setValue("positionLabel6", _positionLabel6);
+    settings.setValue("positionValue6", _positionValue6);
 }
 
 void Dial::loadSettings(QSettings &settings) {
@@ -212,6 +216,8 @@ void Dial::createSettings(QGridLayout *layout) {
     createLineEditSetting(layout, "Value #4", _positionValue4, SLOT(setPositionValue4(QString)));
     createLineEditSetting(layout, "Label #5", _positionLabel5, SLOT(setPositionLabel5(QString)));
     createLineEditSetting(layout, "Value #5", _positionValue5, SLOT(setPositionValue5(QString)));
+    createLineEditSetting(layout, "Label #6", _positionLabel6, SLOT(setPositionLabel6(QString)));
+    createLineEditSetting(layout, "Value #6", _positionValue6, SLOT(setPositionValue6(QString)));
 }
 
 void Dial::applySettings() {
@@ -232,6 +238,8 @@ void Dial::loadPreset(int val) {
     _positionValue4 = "";
     _positionLabel5 = "";
     _positionValue5 = "";
+    _positionLabel6 = "";
+    _positionValue6 = "";
 
     // Apply preset
     if(val == 1) {
@@ -282,6 +290,7 @@ void Dial::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) {
             if(_dialPosition == 3) _dataref->setValue(_positionValue3);
             if(_dialPosition == 4) _dataref->setValue(_positionValue4);
             if(_dialPosition == 5) _dataref->setValue(_positionValue5);
+            if(_dialPosition == 6) _dataref->setValue(_positionValue6);
         }
         update();
     }
@@ -300,18 +309,20 @@ void Dial::valueChanged(QString ref, QString newValue) {
     if(_value == _positionValue3) _dialPosition = 3;
     if(_value == _positionValue4) _dialPosition = 4;
     if(_value == _positionValue5) _dialPosition = 5;
+    if(_value == _positionValue6) _dialPosition = 6;
     DEBUG << "value has changed to" << newValue << "with new dialpos" << _dialPosition;
     update();
 }
 
 void Dial::updatePositions() {
     int numPositions = 0;
-    for(int i = 1; i <=5; i++) {
+    for(int i = 1; i <=6; i++) {
         if(i == 1 && _positionValue1.isEmpty()) break;
         if(i == 2 && _positionValue2.isEmpty()) break;
         if(i == 3 && _positionValue3.isEmpty()) break;
         if(i == 4 && _positionValue4.isEmpty()) break;
         if(i == 5 && _positionValue5.isEmpty()) break;
+        if(i == 6 && _positionValue6.isEmpty()) break;
         numPositions++;
     }
     DEBUG << "new dial positions:" << numPositions;

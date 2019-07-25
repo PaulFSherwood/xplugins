@@ -33,7 +33,7 @@ void Button::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
     if(_isHeld) {
         painter->setBrush(Qt::gray);  // button is held down should be GRAY
     } else {
-        painter->setBrush(Qt::black); // button is not held down should be BLACK
+        painter->setBrush(Qt::transparent); // black); // button is not held down should be BLACK
     }
 
     painter->setPen(Qt::white);     // set writting?
@@ -145,7 +145,7 @@ void Button::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) {
         if(!_isKey) {
             _client.buttonRelease(_buttonId);
             _value = !_value;
-            qDebug() << "_Value Pressed: " << _value << endl;
+            // qDebug() << "_Value Pressed: " << _value << endl;
             if(_ref) _ref->setValue(_value ? "1" : "0");
         }
         update();
@@ -156,6 +156,6 @@ void Button::valueChanged(QString ref, double newValue) {
     DEBUG << ref << newValue;
     Q_ASSERT(ref==_refname);
     _value = newValue != 0;
-    qDebug() << "Value Changed: " << _value << endl;
+    // qDebug() << "Value Changed: " << _value << endl;
 }
 

@@ -34,6 +34,8 @@ public slots:
     void setPositionValue4(QString val) { _positionValue4 = val; updatePositions(); }
     void setPositionLabel5(QString val) { _positionLabel5 = val; updatePositions(); }
     void setPositionValue5(QString val) { _positionValue5 = val; updatePositions(); }
+    void setPositionLabel6(QString val) { _positionLabel6 = val; updatePositions(); }
+    void setPositionValue6(QString val) { _positionValue6 = val; updatePositions(); }
     void loadPreset(int val);
 
 private slots:
@@ -59,6 +61,8 @@ private:
     QString _positionValue4;
     QString _positionLabel5;
     QString _positionValue5;
+    QString _positionLabel6;
+    QString _positionValue6;
 };
 
 #endif // DIAL_H
