@@ -20,7 +20,7 @@ Dial::Dial(ExtPlanePanel *panel, ExtPlaneConnection *conn) :
     _client.createClient();
     conn->registerClient(&_client);
     connect(&_client, SIGNAL(refChanged(QString,double)), this, SLOT(valueChanged(QString,double)));
-    connect(&_client, SIGNAL(refChanged(QString,QString)), this, SLOT(valueChanged(QString,QString)));
+    connect(&_client, SIGNAL(refChanged(QString,QString)),this, SLOT(valueChanged(QString,QString)));
     _value = "";
     _label = "AUTOPILOT";
     _positionLabel1 = "OFF";

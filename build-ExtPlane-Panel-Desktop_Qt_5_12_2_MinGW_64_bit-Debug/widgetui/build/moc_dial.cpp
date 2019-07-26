@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Dial_t {
-    QByteArrayData data[24];
-    char stringdata0[309];
+    QByteArrayData data[26];
+    char stringdata0[345];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -46,15 +46,17 @@ QT_MOC_LITERAL(11, 138, 17), // "setPositionLabel4"
 QT_MOC_LITERAL(12, 156, 17), // "setPositionValue4"
 QT_MOC_LITERAL(13, 174, 17), // "setPositionLabel5"
 QT_MOC_LITERAL(14, 192, 17), // "setPositionValue5"
-QT_MOC_LITERAL(15, 210, 10), // "loadPreset"
-QT_MOC_LITERAL(16, 221, 12), // "valueChanged"
-QT_MOC_LITERAL(17, 234, 3), // "ref"
-QT_MOC_LITERAL(18, 238, 8), // "newValue"
-QT_MOC_LITERAL(19, 247, 15), // "updatePositions"
-QT_MOC_LITERAL(20, 263, 14), // "ExtPlanePanel*"
-QT_MOC_LITERAL(21, 278, 5), // "panel"
-QT_MOC_LITERAL(22, 284, 19), // "ExtPlaneConnection*"
-QT_MOC_LITERAL(23, 304, 4) // "conn"
+QT_MOC_LITERAL(15, 210, 17), // "setPositionLabel6"
+QT_MOC_LITERAL(16, 228, 17), // "setPositionValue6"
+QT_MOC_LITERAL(17, 246, 10), // "loadPreset"
+QT_MOC_LITERAL(18, 257, 12), // "valueChanged"
+QT_MOC_LITERAL(19, 270, 3), // "ref"
+QT_MOC_LITERAL(20, 274, 8), // "newValue"
+QT_MOC_LITERAL(21, 283, 15), // "updatePositions"
+QT_MOC_LITERAL(22, 299, 14), // "ExtPlanePanel*"
+QT_MOC_LITERAL(23, 314, 5), // "panel"
+QT_MOC_LITERAL(24, 320, 19), // "ExtPlaneConnection*"
+QT_MOC_LITERAL(25, 340, 4) // "conn"
 
     },
     "Dial\0setLabel\0\0val\0setDataRef\0"
@@ -63,6 +65,7 @@ QT_MOC_LITERAL(23, 304, 4) // "conn"
     "setPositionLabel3\0setPositionValue3\0"
     "setPositionLabel4\0setPositionValue4\0"
     "setPositionLabel5\0setPositionValue5\0"
+    "setPositionLabel6\0setPositionValue6\0"
     "loadPreset\0valueChanged\0ref\0newValue\0"
     "updatePositions\0ExtPlanePanel*\0panel\0"
     "ExtPlaneConnection*\0conn"
@@ -75,30 +78,32 @@ static const uint qt_meta_data_Dial[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      16,   14, // methods
+      18,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
-       1,  149, // constructors
+       1,  165, // constructors
        0,       // flags
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    1,   94,    2, 0x0a /* Public */,
-       4,    1,   97,    2, 0x0a /* Public */,
-       5,    1,  100,    2, 0x0a /* Public */,
-       6,    1,  103,    2, 0x0a /* Public */,
-       7,    1,  106,    2, 0x0a /* Public */,
-       8,    1,  109,    2, 0x0a /* Public */,
-       9,    1,  112,    2, 0x0a /* Public */,
-      10,    1,  115,    2, 0x0a /* Public */,
-      11,    1,  118,    2, 0x0a /* Public */,
-      12,    1,  121,    2, 0x0a /* Public */,
-      13,    1,  124,    2, 0x0a /* Public */,
-      14,    1,  127,    2, 0x0a /* Public */,
-      15,    1,  130,    2, 0x0a /* Public */,
-      16,    2,  133,    2, 0x08 /* Private */,
-      16,    2,  138,    2, 0x08 /* Private */,
-      19,    0,  143,    2, 0x08 /* Private */,
+       1,    1,  104,    2, 0x0a /* Public */,
+       4,    1,  107,    2, 0x0a /* Public */,
+       5,    1,  110,    2, 0x0a /* Public */,
+       6,    1,  113,    2, 0x0a /* Public */,
+       7,    1,  116,    2, 0x0a /* Public */,
+       8,    1,  119,    2, 0x0a /* Public */,
+       9,    1,  122,    2, 0x0a /* Public */,
+      10,    1,  125,    2, 0x0a /* Public */,
+      11,    1,  128,    2, 0x0a /* Public */,
+      12,    1,  131,    2, 0x0a /* Public */,
+      13,    1,  134,    2, 0x0a /* Public */,
+      14,    1,  137,    2, 0x0a /* Public */,
+      15,    1,  140,    2, 0x0a /* Public */,
+      16,    1,  143,    2, 0x0a /* Public */,
+      17,    1,  146,    2, 0x0a /* Public */,
+      18,    2,  149,    2, 0x08 /* Private */,
+      18,    2,  154,    2, 0x08 /* Private */,
+      21,    0,  159,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QString,    3,
@@ -113,16 +118,18 @@ static const uint qt_meta_data_Dial[] = {
     QMetaType::Void, QMetaType::QString,    3,
     QMetaType::Void, QMetaType::QString,    3,
     QMetaType::Void, QMetaType::QString,    3,
+    QMetaType::Void, QMetaType::QString,    3,
+    QMetaType::Void, QMetaType::QString,    3,
     QMetaType::Void, QMetaType::Int,    3,
-    QMetaType::Void, QMetaType::QString, QMetaType::Double,   17,   18,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString,   17,   18,
+    QMetaType::Void, QMetaType::QString, QMetaType::Double,   19,   20,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString,   19,   20,
     QMetaType::Void,
 
  // constructors: parameters
-    0x80000000 | 2, 0x80000000 | 20, 0x80000000 | 22,   21,   23,
+    0x80000000 | 2, 0x80000000 | 22, 0x80000000 | 24,   23,   25,
 
  // constructors: name, argc, parameters, tag, flags
-       0,    2,  144,    2, 0x0e /* Public */,
+       0,    2,  160,    2, 0x0e /* Public */,
 
        0        // eod
 };
@@ -151,10 +158,12 @@ void Dial::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void *
         case 9: _t->setPositionValue4((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 10: _t->setPositionLabel5((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 11: _t->setPositionValue5((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 12: _t->loadPreset((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 13: _t->valueChanged((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2]))); break;
-        case 14: _t->valueChanged((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
-        case 15: _t->updatePositions(); break;
+        case 12: _t->setPositionLabel6((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 13: _t->setPositionValue6((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 14: _t->loadPreset((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 15: _t->valueChanged((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2]))); break;
+        case 16: _t->valueChanged((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
+        case 17: _t->updatePositions(); break;
         default: ;
         }
     }
@@ -189,13 +198,13 @@ int Dial::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 16)
+        if (_id < 18)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 16;
+        _id -= 18;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 16)
+        if (_id < 18)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 16;
+        _id -= 18;
     }
     return _id;
 }

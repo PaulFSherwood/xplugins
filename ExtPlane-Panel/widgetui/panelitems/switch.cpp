@@ -10,8 +10,7 @@
 
 REGISTER_WITH_PANEL_ITEM_FACTORY(Switch,"switches/generic");
 
-Switch::Switch(ExtPlanePanel *panel, ExtPlaneConnection *conn) :
-        PanelItem(panel, PanelItemTypeSwitch, PanelItemShapeRectangular),
+Switch::Switch(ExtPlanePanel *panel, ExtPlaneConnection *conn) : PanelItem(panel, PanelItemTypeSwitch, PanelItemShapeRectangular),
         _client(this, typeName(), conn) {
             _client.createClient();
             conn->registerClient(&_client);
@@ -27,7 +26,10 @@ void Switch::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
 
     painter->setBrush(Qt::gray);
     painter->setPen(Qt::gray);
-
+    //////////
+    /// START
+    ///
+    /// setBackgroundBrush(QBrush(QImage(":/images/pedestal.png")));
     double circleSize = height()/3;
     painter->drawEllipse(0, height()/2-circleSize/2, circleSize, circleSize);
 
@@ -42,9 +44,9 @@ void Switch::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
     if(_value)
         painter->scale(1,-1);
     if(_value) {
-        painter->setBrush(Qt::darkGray);
+        painter->setBrush(QBrush(QImage(":/images/FuelSwitch.png")));
     } else {
-        painter->setBrush(Qt::lightGray);
+        painter->setBrush(QBrush(QImage(":/images/FuelSwitch.png").mirrored(true, false)));
     }
     painter->drawPolygon(p);
 
@@ -117,7 +119,7 @@ void Switch::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) {
         PanelItem::mouseReleaseEvent(event);
     } else if(event->pos().x() < switchWidth) {
         _value = !_value;
-        if(_ref) _ref->setValue(_value ? "1" : "0");
+        if(_ref) _ref->setValue(_value ? "2" : "0");
         update();
     }
 }
