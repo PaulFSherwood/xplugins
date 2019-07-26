@@ -1,17 +1,41 @@
-trying out new plugins
-
-
-Variables to try
-Settings from X-Plane datarefs				
-				
-Switch/button/knob		dataRef	Values	Checked
-Fuel cutoff Left		1-sim/fuel/fuelCutOffLeft			2,1,0	
-Fuel cutoff Right		1-sim/fuel/fuelCutOffRight			2,1,0
-	
-EICAS STATUS PAGE				
-Display Engine status Left		1-sim/eicas/stat1but		1,0	
-Display Engine status Right		1-sim/eicas/stat2but		1,0	
-Computer select L/Auto/R		1-sim/eicas/compSelector	0,1,2	
-Wheel Well test					1-sim/fire/1/testButton		0,1	
-NOT USED						1-sim/fire/2/testButton		0,1	
-ENG/APU Cargo test				1-sim/fire/3/testButton		0,1	
+Settings from X-Plane datarefs					
+					
+Switch/button/knob		dataRef	Values	Checked	
+Fuel cutoff Left		1-sim/fuel/fuelCutOffLeft	2,1,0		
+Fuel cutoff Right		1-sim/fuel/fuelCutOffRight	2,1,0		
+EICAS STATUS PAGE					
+Display Engine status Left		1-sim/eicas/stat1but	1,0		
+Display Engine status Right		1-sim/eicas/stat2but	1,0		
+Computer select L/Auto/R		1-sim/eicas/compSelector	0,1,2		
+Wheel Well test		1-sim/fire/1/testButton	0,1		
+NOT USED		1-sim/fire/2/testButton	0,1		
+ENG/APU Cargo test		1-sim/fire/3/testButton	0,1		
+HSI					
+HSI range select knob Capt		1-sim/ndpanel/1/hsiRangeRotary	0,1,2,3,4,5		
+HSI range select knob FO		1-sim/ndpanel/2/hsiRangeRotary	0,1,2,3,4,5		
+HSI Mode select knob Capt		1-sim/ndpanel/1/hsiModeRotary	0,1,2,3		
+HSI Mode select knob FO		1-sim/ndpanel/2/hsiModeRotary	0,1,2,3		
+HSI Terr Select Capt		1-sim/ndpanel/1/hsiTerr	0,1		
+HSI Terr Select FO		1-sim/ndpanel/2/hsiTerr	0,1		
+HSI Wxr Select Capt		1-sim/ndpanel/1/hsiWxr	0,1		
+HSI Wxr Select FO		1-sim/ndpanel/2/hsiWxr	0,1		
+HSI Nav Aid ON Capt		1-sim/ndpanel/1/map2	0,1		
+HSI Nav Aid ON FO		1-sim/ndpanel/2/map2	0,1		
+HSI APRT ON Capt		1-sim/ndpanel/1/map3	0,1		
+HSI APRT ON FO		1-sim/ndpanel/2/map3	0,1		
+HSI DATA ON Capt		1-sim/ndpanel/1/map4	0,1		
+HSI DATA ON FO		1-sim/ndpanel/2/map4	0,1		
+HSI WPT ON Capt		1-sim/ndpanel/1/map5	0,1		
+HSI WPT ON FO		1-sim/ndpanel/2/map5	0,1		
+AP CNTRL PNL					
+F/D ON/OFF Capt		1-sim/AP/fd1Switcher	0,1		
+F/D ON/OFF FO		1-sim/AP/fd2Switcher	0,1		
+FD A/T ARM on/off		1-sim/AP/atSwitcher	0,1		
+AP THR button		1-sim/AP/eprButton	0,1		
+AP SPD button		1-sim/AP/spdButton	0,1		
+ISA/MACH		1-sim/AP/spdRotary	-500, 500		
+AP LNAV button		1-sim/AP/lnavButton	0,1		
+AP VNAV button		1-sim/AP/vnavButton	0,1		
+AP Hold Button		1-sim/AP/hdgHoldButton	0,1		
+AP bankLimitRotary		1-sim/AP/bankLimitRotary	0,5,10,15,20,25		
+					
