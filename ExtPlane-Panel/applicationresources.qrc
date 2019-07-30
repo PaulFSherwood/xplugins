@@ -8,5 +8,7 @@
         <file>images/DR400_engine_generic_needle.png</file>
         <file>images/pedestal.png</file>
         <file>images/FuelSwitch.png</file>
+        <file>images/HSIPanel.png</file>
+        <file>images/EICASPANEL.png</file>
     </qresource>
 </RCC>

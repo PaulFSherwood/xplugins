@@ -103,7 +103,9 @@ void ExtPlaneConnection::receivedLineSlot(QString & line) {
     if(!server_ok) { // Waiting for handshake..
         if(line=="EXTPLANE 1") {
             server_ok = true;
-            emit connectionMessage(QString("Connected to ExtPlane at %1:%2").arg(hostName()).arg(port()));
+            // Removed annoying for now.
+            // emit connectionMessage(QString("Connected to ExtPlane at %1:%2").arg(hostName()).arg(port()));
+            emit connectionMessage(QString(" "));
             setUpdateInterval(updateInterval);
             // Sub all refs
             for(ClientDataRef *ref : dataRefs)

@@ -33,29 +33,29 @@ SUBTARGETS    =  \
 
 sub-widgetui-qmake_all:  FORCE
 	@if not exist widgetui\ mkdir widgetui\ & if not exist widgetui\ exit 1
-	cd widgetui\ && $(QMAKE) -o Makefile C:\Users\Paul\Documents\x-plane\ExtPlane-Panel\widgetui\widgetui.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
+	cd widgetui\ && $(QMAKE) -o Makefile C:\Users\maint\Documents\X-Plane\xplugins\ExtPlane-Panel\widgetui\widgetui.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 	cd widgetui\ && $(MAKE) -f Makefile qmake_all
 sub-widgetui: FORCE
 	@if not exist widgetui\ mkdir widgetui\ & if not exist widgetui\ exit 1
-	cd widgetui\ && ( if not exist Makefile $(QMAKE) -o Makefile C:\Users\Paul\Documents\x-plane\ExtPlane-Panel\widgetui\widgetui.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile
+	cd widgetui\ && ( if not exist Makefile $(QMAKE) -o Makefile C:\Users\maint\Documents\X-Plane\xplugins\ExtPlane-Panel\widgetui\widgetui.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile
 sub-widgetui-make_first: FORCE
 	@if not exist widgetui\ mkdir widgetui\ & if not exist widgetui\ exit 1
-	cd widgetui\ && ( if not exist Makefile $(QMAKE) -o Makefile C:\Users\Paul\Documents\x-plane\ExtPlane-Panel\widgetui\widgetui.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile 
+	cd widgetui\ && ( if not exist Makefile $(QMAKE) -o Makefile C:\Users\maint\Documents\X-Plane\xplugins\ExtPlane-Panel\widgetui\widgetui.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile 
 sub-widgetui-all: FORCE
 	@if not exist widgetui\ mkdir widgetui\ & if not exist widgetui\ exit 1
-	cd widgetui\ && ( if not exist Makefile $(QMAKE) -o Makefile C:\Users\Paul\Documents\x-plane\ExtPlane-Panel\widgetui\widgetui.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile all
+	cd widgetui\ && ( if not exist Makefile $(QMAKE) -o Makefile C:\Users\maint\Documents\X-Plane\xplugins\ExtPlane-Panel\widgetui\widgetui.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile all
 sub-widgetui-clean: FORCE
 	@if not exist widgetui\ mkdir widgetui\ & if not exist widgetui\ exit 1
-	cd widgetui\ && ( if not exist Makefile $(QMAKE) -o Makefile C:\Users\Paul\Documents\x-plane\ExtPlane-Panel\widgetui\widgetui.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile clean
+	cd widgetui\ && ( if not exist Makefile $(QMAKE) -o Makefile C:\Users\maint\Documents\X-Plane\xplugins\ExtPlane-Panel\widgetui\widgetui.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile clean
 sub-widgetui-distclean: FORCE
 	@if not exist widgetui\ mkdir widgetui\ & if not exist widgetui\ exit 1
-	cd widgetui\ && ( if not exist Makefile $(QMAKE) -o Makefile C:\Users\Paul\Documents\x-plane\ExtPlane-Panel\widgetui\widgetui.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile distclean
+	cd widgetui\ && ( if not exist Makefile $(QMAKE) -o Makefile C:\Users\maint\Documents\X-Plane\xplugins\ExtPlane-Panel\widgetui\widgetui.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile distclean
 sub-widgetui-install_subtargets: FORCE
 	@if not exist widgetui\ mkdir widgetui\ & if not exist widgetui\ exit 1
-	cd widgetui\ && ( if not exist Makefile $(QMAKE) -o Makefile C:\Users\Paul\Documents\x-plane\ExtPlane-Panel\widgetui\widgetui.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile install
+	cd widgetui\ && ( if not exist Makefile $(QMAKE) -o Makefile C:\Users\maint\Documents\X-Plane\xplugins\ExtPlane-Panel\widgetui\widgetui.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile install
 sub-widgetui-uninstall_subtargets: FORCE
 	@if not exist widgetui\ mkdir widgetui\ & if not exist widgetui\ exit 1
-	cd widgetui\ && ( if not exist Makefile $(QMAKE) -o Makefile C:\Users\Paul\Documents\x-plane\ExtPlane-Panel\widgetui\widgetui.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile uninstall
+	cd widgetui\ && ( if not exist Makefile $(QMAKE) -o Makefile C:\Users\maint\Documents\X-Plane\xplugins\ExtPlane-Panel\widgetui\widgetui.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile uninstall
 
 Makefile: ../ExtPlane-Panel/ExtPlane-Panel.pro C:/Qt/5.12.2/mingw73_64/mkspecs/win32-g++/qmake.conf C:/Qt/5.12.2/mingw73_64/mkspecs/features/spec_pre.prf \
 		C:/Qt/5.12.2/mingw73_64/mkspecs/qdevice.pri \
@@ -91,6 +91,8 @@ Makefile: ../ExtPlane-Panel/ExtPlane-Panel.pro C:/Qt/5.12.2/mingw73_64/mkspecs/w
 		C:/Qt/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dquickscene2d_private.pri \
 		C:/Qt/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3drender.pri \
 		C:/Qt/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3drender_private.pri \
+		C:/Qt/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dstudioruntime2.pri \
+		C:/Qt/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dstudioruntime2_private.pri \
 		C:/Qt/5.12.2/mingw73_64/mkspecs/modules/qt_lib_accessibility_support_private.pri \
 		C:/Qt/5.12.2/mingw73_64/mkspecs/modules/qt_lib_axbase.pri \
 		C:/Qt/5.12.2/mingw73_64/mkspecs/modules/qt_lib_axbase_private.pri \
@@ -216,6 +218,7 @@ Makefile: ../ExtPlane-Panel/ExtPlane-Panel.pro C:/Qt/5.12.2/mingw73_64/mkspecs/w
 		C:/Qt/5.12.2/mingw73_64/mkspecs/features/qt_config.prf \
 		C:/Qt/5.12.2/mingw73_64/mkspecs/win32-g++/qmake.conf \
 		C:/Qt/5.12.2/mingw73_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		C:/Qt/5.12.2/mingw73_64/mkspecs/features/exclusive_builds.prf \
 		C:/Qt/5.12.2/mingw73_64/mkspecs/features/toolchain.prf \
 		C:/Qt/5.12.2/mingw73_64/mkspecs/features/default_pre.prf \
@@ -269,6 +272,8 @@ C:/Qt/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dquickscene2d.pri:
 C:/Qt/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dquickscene2d_private.pri:
 C:/Qt/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3drender.pri:
 C:/Qt/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3drender_private.pri:
+C:/Qt/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dstudioruntime2.pri:
+C:/Qt/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dstudioruntime2_private.pri:
 C:/Qt/5.12.2/mingw73_64/mkspecs/modules/qt_lib_accessibility_support_private.pri:
 C:/Qt/5.12.2/mingw73_64/mkspecs/modules/qt_lib_axbase.pri:
 C:/Qt/5.12.2/mingw73_64/mkspecs/modules/qt_lib_axbase_private.pri:
@@ -394,6 +399,7 @@ C:/Qt/5.12.2/mingw73_64/mkspecs/features/qt_functions.prf:
 C:/Qt/5.12.2/mingw73_64/mkspecs/features/qt_config.prf:
 C:/Qt/5.12.2/mingw73_64/mkspecs/win32-g++/qmake.conf:
 C:/Qt/5.12.2/mingw73_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 C:/Qt/5.12.2/mingw73_64/mkspecs/features/exclusive_builds.prf:
 C:/Qt/5.12.2/mingw73_64/mkspecs/features/toolchain.prf:
 C:/Qt/5.12.2/mingw73_64/mkspecs/features/default_pre.prf:
@@ -428,22 +434,22 @@ uninstall_subtargets: sub-widgetui-uninstall_subtargets FORCE
 
 sub-widgetui-debug:
 	@if not exist widgetui\ mkdir widgetui\ & if not exist widgetui\ exit 1
-	cd widgetui\ && ( if not exist Makefile $(QMAKE) -o Makefile C:\Users\Paul\Documents\x-plane\ExtPlane-Panel\widgetui\widgetui.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile debug
+	cd widgetui\ && ( if not exist Makefile $(QMAKE) -o Makefile C:\Users\maint\Documents\X-Plane\xplugins\ExtPlane-Panel\widgetui\widgetui.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile debug
 debug: sub-widgetui-debug
 
 sub-widgetui-release:
 	@if not exist widgetui\ mkdir widgetui\ & if not exist widgetui\ exit 1
-	cd widgetui\ && ( if not exist Makefile $(QMAKE) -o Makefile C:\Users\Paul\Documents\x-plane\ExtPlane-Panel\widgetui\widgetui.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile release
+	cd widgetui\ && ( if not exist Makefile $(QMAKE) -o Makefile C:\Users\maint\Documents\X-Plane\xplugins\ExtPlane-Panel\widgetui\widgetui.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile release
 release: sub-widgetui-release
 
 sub-widgetui-check:
 	@if not exist widgetui\ mkdir widgetui\ & if not exist widgetui\ exit 1
-	cd widgetui\ && ( if not exist Makefile $(QMAKE) -o Makefile C:\Users\Paul\Documents\x-plane\ExtPlane-Panel\widgetui\widgetui.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile check
+	cd widgetui\ && ( if not exist Makefile $(QMAKE) -o Makefile C:\Users\maint\Documents\X-Plane\xplugins\ExtPlane-Panel\widgetui\widgetui.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile check
 check: sub-widgetui-check
 
 sub-widgetui-benchmark:
 	@if not exist widgetui\ mkdir widgetui\ & if not exist widgetui\ exit 1
-	cd widgetui\ && ( if not exist Makefile $(QMAKE) -o Makefile C:\Users\Paul\Documents\x-plane\ExtPlane-Panel\widgetui\widgetui.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile benchmark
+	cd widgetui\ && ( if not exist Makefile $(QMAKE) -o Makefile C:\Users\maint\Documents\X-Plane\xplugins\ExtPlane-Panel\widgetui\widgetui.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile benchmark
 benchmark: sub-widgetui-benchmark
 install:install_subtargets  FORCE
 

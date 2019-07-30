@@ -77,7 +77,7 @@ PanelWindow::PanelWindow() : QGraphicsView(), scene(), statusMessage() {
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setSceneRect(0, 0, width(), height());
 
-    setBackgroundBrush(QBrush(QImage(":/images/pedestal.png")));
+    setBackgroundBrush(QBrush(QImage(":/images/HSIPanel.png")));
     setFrameShape(QFrame::NoFrame);
 
     // Settings dialog
@@ -173,7 +173,7 @@ PanelWindow::PanelWindow() : QGraphicsView(), scene(), statusMessage() {
                               appSettings->valueFromSettingsOrCommandLine("height", 768).toInt());
         } else {
             // Default window size
-            resize(1024,768);
+            resize(443,590);
         }
     }
 
