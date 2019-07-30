@@ -77,7 +77,7 @@ PanelWindow::PanelWindow() : QGraphicsView(), scene(), statusMessage() {
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setSceneRect(0, 0, width(), height());
 
-    setBackgroundBrush(QBrush(QImage(":/images/HSIPanel.png")));
+    setBackgroundBrush(QBrush(QImage(":/images/pedestal.png")));
     setFrameShape(QFrame::NoFrame);
 
     // Settings dialog
@@ -173,7 +173,7 @@ PanelWindow::PanelWindow() : QGraphicsView(), scene(), statusMessage() {
                               appSettings->valueFromSettingsOrCommandLine("height", 768).toInt());
         } else {
             // Default window size
-            resize(443,590);
+            resize(1024,768);
         }
     }
 
@@ -513,6 +513,24 @@ void PanelWindow::loadProfile(QString filename) {
     // Register this file as the last loaded...
     appSettings->setValue("lastloadedprofile",filename);
     dirty = false;
+}
+
+void PanelWindow::loadBGPicture() {                     // added so we can switch teh background picture
+    QString filename = QFileDialog::getOpenFileName(this, tr("Open BG Picture"), "", tr("Ini Files (*.png)"));
+    if(!filename.isEmpty()) loadBGPicture(filename);
+}
+
+void PanelWindow::loadBGPicture(QString filename) {     // added so we can switch teh background picture
+    if(filename.isEmpty()) return;
+
+    // Load panel settings file
+    INFO << "Loading profile from" << filename;
+    if(!QFile::exists(filename)) {
+        connectionMessage(QString("File %1 does not exist.").arg(filename));
+        return;
+    }
+    setBackgroundBrush(QBrush(QImage(filename)));
+
 }
 
 void PanelWindow::newProfile() {

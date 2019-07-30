@@ -62,6 +62,8 @@ public slots:
     void saveProfileAs();
     void loadProfile();
     void loadProfile(QString filename);
+    void loadBGPicture();                   // added so we can switch teh background picture
+    void loadBGPicture(QString filename);   // added so we can switch teh background picture
     void newProfile();
     void showHardware();
     void showSettings();
