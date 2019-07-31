@@ -515,12 +515,12 @@ void PanelWindow::loadProfile(QString filename) {
     dirty = false;
 }
 
-void PanelWindow::loadBGPicture() {                     // added so we can switch teh background picture
+void PanelWindow::loadBGImage() {                     // added so we can switch teh background picture
     QString filename = QFileDialog::getOpenFileName(this, tr("Open BG Image"), "", tr("Ini Files (*.png)"));
     if(!filename.isEmpty()) loadBGPicture(filename);
 }
 
-void PanelWindow::loadBGPicture(QString filename) {     // added so we can switch teh background picture
+void PanelWindow::loadBGImage(QString filename) {     // added so we can switch teh background picture
     if(filename.isEmpty()) return;
 
     // Load panel settings file
