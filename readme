@@ -45,6 +45,7 @@ AP bankLimitRotary		1-sim/AP/bankLimitRotary	0,5,10,15,20,25
 TODO LIST
 -----	Let you change the size (not hard coded)(1024, 768)
 -----	Default picture and size should be added to the saved ini file
------	Update the switch to have a better looking switch
+----+	Update the switch to have a better looking switch
+-----	Set switch click area box.
 -----	Update the rotary knob to a better picture
 					
