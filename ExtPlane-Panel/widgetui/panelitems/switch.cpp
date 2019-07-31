@@ -31,24 +31,27 @@ void Switch::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
     ///
     /// setBackgroundBrush(QBrush(QImage(":/images/pedestal.png")));
     double circleSize = height()/3;
-    painter->drawEllipse(0, height()/2-circleSize/2, circleSize, circleSize);
+    // painter->drawEllipse(0, height()/2-circleSize/2, circleSize, circleSize);
 
-    painter->save();
+    // painter->save();
 
     switchWidth = height()/3;
     painter->translate(switchWidth/2, height()/2);
 
-    QPolygon p;
-    p << QPoint(-switchWidth/4, 0) << QPoint(switchWidth/4, 0)
-      << QPoint(switchWidth/2, height()/2) << QPoint(-switchWidth/2, height()/2);
+    // QPolygon p;
+    // p << QPoint(-switchWidth/4, 0) << QPoint(switchWidth/4, 0)
+    //   << QPoint(switchWidth/2, height()/2) << QPoint(-switchWidth/2, height()/2);
     if(_value)
         painter->scale(1,-1);
     if(_value) {
-        painter->setBrush(QBrush(QImage(":/images/FuelSwitch.png")));
+        // painter->setBrush(QBrush(QImage(":/images/FuelSwitch.png")));
+        painter->drawImage(QRect(-26, height()/4-circleSize, circleSize, circleSize), QImage(":/images/FuelSwitch.png"));
     } else {
-        painter->setBrush(QBrush(QImage(":/images/FuelSwitch.png").mirrored(true, false)));
+        // painter->setBrush(QBrush(QImage(":/images/FuelSwitch.png").mirrored(true, false)));
+                       // LEFT/RIGHT,    UP/DOWN,      WIDTH,      HIGHT
+        painter->drawImage(QRect(-26, height()/4-circleSize, circleSize, circleSize), QImage(":/images/FuelSwitch.png").mirrored(true, false));
     }
-    painter->drawPolygon(p);
+    //painter->drawPolygon(p);
 
     painter->restore();
     painter->setPen(Qt::white);
