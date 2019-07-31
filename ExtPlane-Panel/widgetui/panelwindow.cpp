@@ -516,7 +516,7 @@ void PanelWindow::loadProfile(QString filename) {
 }
 
 void PanelWindow::loadBGPicture() {                     // added so we can switch teh background picture
-    QString filename = QFileDialog::getOpenFileName(this, tr("Open BG Picture"), "", tr("Ini Files (*.png)"));
+    QString filename = QFileDialog::getOpenFileName(this, tr("Open BG Image"), "", tr("Ini Files (*.png)"));
     if(!filename.isEmpty()) loadBGPicture(filename);
 }
 
