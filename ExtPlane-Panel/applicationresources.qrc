@@ -10,5 +10,6 @@
         <file>images/FuelSwitch.png</file>
         <file>images/HSIPanel.png</file>
         <file>images/EICASPANEL.png</file>
+        <file>images/ADIHSIPANEL.png</file>
     </qresource>
 </RCC>

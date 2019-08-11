@@ -264,9 +264,10 @@ void IndicatorDisplay::setDataRefName(QString name) {
     if(_datarefName != "" && _client.isDataRefSubscribed(_datarefName)) _client.unsubscribeDataRef(_datarefName); //TODO: there seems to be something wrong with unsubscribing...
     _datarefName = name;
     _datarefValue = "";
-
+    qDebug() << "PreSubscribeDataRef: " << name;
     // Subscribe new
     _client.subscribeDataRef(name, 0);
+    qDebug() << "PostSubscribeDataRef: ";
 }
 
 void IndicatorDisplay::dataRefChanged(QString name, QString val) {

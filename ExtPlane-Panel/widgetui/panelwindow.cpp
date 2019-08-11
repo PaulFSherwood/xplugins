@@ -77,7 +77,8 @@ PanelWindow::PanelWindow() : QGraphicsView(), scene(), statusMessage() {
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setSceneRect(0, 0, width(), height());
 
-    setBackgroundBrush(QBrush(QImage(":/images/pedestal.png")));
+    setBackgroundBrush(QBrush(QImage(":/images/ADIHSIPANEL.png")));
+    //setBackgroundBrush(QBrush(QImage(":/images/pedestal.png")));
     setFrameShape(QFrame::NoFrame);
 
     // Settings dialog
@@ -173,7 +174,8 @@ PanelWindow::PanelWindow() : QGraphicsView(), scene(), statusMessage() {
                               appSettings->valueFromSettingsOrCommandLine("height", 768).toInt());
         } else {
             // Default window size
-            resize(1024,768);
+            resize(440,609);
+            // resize(1024,768);
         }
     }
 
@@ -517,7 +519,7 @@ void PanelWindow::loadProfile(QString filename) {
 
 void PanelWindow::loadBGImage() {                     // added so we can switch teh background picture
     QString filename = QFileDialog::getOpenFileName(this, tr("Open BG Image"), "", tr("Ini Files (*.png)"));
-    if(!filename.isEmpty()) loadBGPicture(filename);
+    if(!filename.isEmpty()) loadBGImage(filename);
 }
 
 void PanelWindow::loadBGImage(QString filename) {     // added so we can switch teh background picture
