@@ -21,6 +21,7 @@ IndicatorLight::IndicatorLight(ExtPlanePanel *panel, ExtPlaneConnection *conn) :
     _labelOff = "BRAKES";
     _labelColor = Qt::red;
     _datarefName = "";
+    _datarefValue = 0;
     _threshold = 0.1;
     _strengthOn = 100;
     _strengthOff = 20;
@@ -50,20 +51,20 @@ void IndicatorLight::paint(QPainter *painter, const QStyleOptionGraphicsItem *op
     setupPainter(painter);
     painter->save(); {
 
-        // Draw the dataref name and value
-        painter->setBrush(Qt::NoBrush);
-        painter->setPen(_labelColor);
-        QFont font = defaultFont;
-        font.setBold(true);
-        font.setPixelSize(height()*0.7+itemFontSize());
-        painter->setFont(font);
-        if(_on) {
-            painter->setOpacity(_strengthOn/100.0);
-            painter->drawText(QRect(0,0,width(), height()), Qt::AlignCenter, _labelOn);
-        } else {
-            painter->setOpacity(_strengthOff/100.0);
-            painter->drawText(QRect(0,0,width(), height()), Qt::AlignCenter, _labelOff);
-        }
+    // Draw the dataref name and value
+    painter->setBrush(Qt::NoBrush);
+    painter->setPen(_labelColor);
+    QFont font = defaultFont;
+    font.setBold(true);
+    font.setPixelSize(height()*0.7+itemFontSize());
+    painter->setFont(font);
+    if(_on) {
+        painter->setOpacity(_strengthOn/100.0);
+        painter->drawText(QRect(0,0,width(), height()), Qt::AlignCenter, QString::number(_datarefValue)); // _labelOn);
+    } else {
+        painter->setOpacity(_strengthOff/100.0);
+        painter->drawText(QRect(0,0,width(), height()), Qt::AlignCenter, QString::number(_datarefValue)); // _labelOff);
+    }
 
     } painter->restore();
 
@@ -324,7 +325,7 @@ void IndicatorLight::setDataRefName(QString name) {
     // Unsubscribe old
     if(_datarefName != "" && _client.isDataRefSubscribed(_datarefName)) _client.unsubscribeDataRef(_datarefName); //TODO: there seems to be something wrong with unsubscribing...
     _datarefName = name;
-     _datarefValue = 0;
+    _datarefValue = 0;
 
     // Subscribe new
     _client.subscribeDataRef(name, 0);
@@ -340,6 +341,7 @@ void IndicatorLight::dataRefChanged(QString name, double val) {
 
     // On or off?
     DEBUG << name << val;
+    DEBUG << "_datarefValue: " << _datarefValue << "value: " << val << endl;
     _datarefValue = val;
     bool newOn = (_datarefValue > _threshold);
     if(!this->panel()->hasAvionicsPower) newOn = false;
