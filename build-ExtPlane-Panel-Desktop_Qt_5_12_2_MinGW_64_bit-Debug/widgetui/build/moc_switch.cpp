@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Switch_t {
-    QByteArrayData data[12];
-    char stringdata0[100];
+    QByteArrayData data[15];
+    char stringdata0[144];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -35,17 +35,21 @@ QT_MOC_LITERAL(0, 0, 6), // "Switch"
 QT_MOC_LITERAL(1, 7, 8), // "setLabel"
 QT_MOC_LITERAL(2, 16, 0), // ""
 QT_MOC_LITERAL(3, 17, 3), // "txt"
-QT_MOC_LITERAL(4, 21, 6), // "setRef"
-QT_MOC_LITERAL(5, 28, 3), // "ref"
-QT_MOC_LITERAL(6, 32, 12), // "valueChanged"
-QT_MOC_LITERAL(7, 45, 8), // "newValue"
-QT_MOC_LITERAL(8, 54, 14), // "ExtPlanePanel*"
-QT_MOC_LITERAL(9, 69, 5), // "panel"
-QT_MOC_LITERAL(10, 75, 19), // "ExtPlaneConnection*"
-QT_MOC_LITERAL(11, 95, 4) // "conn"
+QT_MOC_LITERAL(4, 21, 10), // "setDataRef"
+QT_MOC_LITERAL(5, 32, 3), // "ref"
+QT_MOC_LITERAL(6, 36, 17), // "setPositionValue1"
+QT_MOC_LITERAL(7, 54, 3), // "val"
+QT_MOC_LITERAL(8, 58, 17), // "setPositionValue2"
+QT_MOC_LITERAL(9, 76, 12), // "valueChanged"
+QT_MOC_LITERAL(10, 89, 8), // "newValue"
+QT_MOC_LITERAL(11, 98, 14), // "ExtPlanePanel*"
+QT_MOC_LITERAL(12, 113, 5), // "panel"
+QT_MOC_LITERAL(13, 119, 19), // "ExtPlaneConnection*"
+QT_MOC_LITERAL(14, 139, 4) // "conn"
 
     },
-    "Switch\0setLabel\0\0txt\0setRef\0ref\0"
+    "Switch\0setLabel\0\0txt\0setDataRef\0ref\0"
+    "setPositionValue1\0val\0setPositionValue2\0"
     "valueChanged\0newValue\0ExtPlanePanel*\0"
     "panel\0ExtPlaneConnection*\0conn"
 };
@@ -57,28 +61,34 @@ static const uint qt_meta_data_Switch[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
-       1,   45, // constructors
+       1,   71, // constructors
        0,       // flags
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    1,   29,    2, 0x0a /* Public */,
-       4,    1,   32,    2, 0x0a /* Public */,
-       6,    2,   35,    2, 0x08 /* Private */,
+       1,    1,   44,    2, 0x0a /* Public */,
+       4,    1,   47,    2, 0x0a /* Public */,
+       6,    1,   50,    2, 0x0a /* Public */,
+       8,    1,   53,    2, 0x0a /* Public */,
+       9,    2,   56,    2, 0x08 /* Private */,
+       9,    2,   61,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QString,    3,
     QMetaType::Void, QMetaType::QString,    5,
-    QMetaType::Void, QMetaType::QString, QMetaType::Double,    5,    7,
+    QMetaType::Void, QMetaType::QString,    7,
+    QMetaType::Void, QMetaType::QString,    7,
+    QMetaType::Void, QMetaType::QString, QMetaType::Double,    5,   10,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString,    5,   10,
 
  // constructors: parameters
-    0x80000000 | 2, 0x80000000 | 8, 0x80000000 | 10,    9,   11,
+    0x80000000 | 2, 0x80000000 | 11, 0x80000000 | 13,   12,   14,
 
  // constructors: name, argc, parameters, tag, flags
-       0,    2,   40,    2, 0x0e /* Public */,
+       0,    2,   66,    2, 0x0e /* Public */,
 
        0        // eod
 };
@@ -96,8 +106,11 @@ void Switch::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->setLabel((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 1: _t->setRef((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 2: _t->valueChanged((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2]))); break;
+        case 1: _t->setDataRef((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 2: _t->setPositionValue1((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 3: _t->setPositionValue2((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 4: _t->valueChanged((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2]))); break;
+        case 5: _t->valueChanged((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
         default: ;
         }
     }
@@ -132,13 +145,13 @@ int Switch::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 6;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 6)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 3;
+        _id -= 6;
     }
     return _id;
 }
