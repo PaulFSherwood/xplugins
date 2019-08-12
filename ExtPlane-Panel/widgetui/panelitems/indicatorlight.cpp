@@ -48,9 +48,17 @@ IndicatorLight::~IndicatorLight() {
 void IndicatorLight::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
 
     // Init painter
+    int precision = 0;
     setupPainter(painter);
     painter->save(); {
 
+    QRegExp re("\\d*");  // a digit (\d), zero or more times (*)
+    if (re.exactMatch(_labelOff)) {
+       precision = _labelOff.toInt();
+    } else {
+        precision = 0;
+    }
+    qDebug() << "Precision :" << precision << endl;
     // Draw the dataref name and value
     painter->setBrush(Qt::NoBrush);
     painter->setPen(_labelColor);
@@ -60,10 +68,18 @@ void IndicatorLight::paint(QPainter *painter, const QStyleOptionGraphicsItem *op
     painter->setFont(font);
     if(_on) {
         painter->setOpacity(_strengthOn/100.0);
-        painter->drawText(QRect(0,0,width(), height()), Qt::AlignCenter, QString::number(_datarefValue)); // _labelOn);
+        if (_labelOn == "NUMBER") {
+            painter->drawText(QRect(0,0,width(), height()), Qt::AlignCenter, QString::number(_datarefValue, 'g', precision));
+        } else {
+            painter->drawText(QRect(0,0,width(), height()), Qt::AlignCenter, _labelOn);
+        }
     } else {
         painter->setOpacity(_strengthOff/100.0);
-        painter->drawText(QRect(0,0,width(), height()), Qt::AlignCenter, QString::number(_datarefValue)); // _labelOff);
+        if (_labelOn == "NUMBER") {
+            painter->drawText(QRect(0,0,width(), height()), Qt::AlignCenter, QString::number(_datarefValue, 'g', precision));
+        } else {
+            painter->drawText(QRect(0,0,width(), height()), Qt::AlignCenter, _labelOff);
+        }
     }
 
     } painter->restore();
