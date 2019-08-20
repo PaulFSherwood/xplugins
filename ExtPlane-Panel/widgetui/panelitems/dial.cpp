@@ -119,6 +119,7 @@ void Dial::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
             if(i == 3) label = _positionLabel3;
             if(i == 4) label = _positionLabel4;
             if(i == 5) label = _positionLabel5;
+            if(i == 6) label = _positionLabel6;
             painter->drawText(QRect(rpx-labelW/2.0,rpy,labelW,labelH), Qt::AlignCenter, label);
             //painter->drawRect(QRect(rpx-labelW/2.0,rpy,labelW,labelH));
             labelPositionDegrees += degreesPerPosition;
@@ -187,6 +188,8 @@ void Dial::loadSettings(QSettings &settings) {
     setPositionValue4(settings.value("positionValue4", "").toString());
     setPositionLabel5(settings.value("positionLabel5", "").toString());
     setPositionValue5(settings.value("positionValue5", "").toString());
+    setPositionLabel6(settings.value("positionLabel6", "").toString());
+    setPositionValue6(settings.value("positionValue6", "").toString());
 }
 
 void Dial::createSettings(QGridLayout *layout) {
