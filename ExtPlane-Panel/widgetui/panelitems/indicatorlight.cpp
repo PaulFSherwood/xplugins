@@ -58,7 +58,7 @@ void IndicatorLight::paint(QPainter *painter, const QStyleOptionGraphicsItem *op
     } else {
         precision = 0;
     }
-    qDebug() << "Precision :" << precision << endl;
+    // qDebug() << "Precision :" << precision << endl;
     // Draw the dataref name and value
     painter->setBrush(Qt::NoBrush);
     painter->setPen(_labelColor);
@@ -69,7 +69,8 @@ void IndicatorLight::paint(QPainter *painter, const QStyleOptionGraphicsItem *op
     if(_on) {
         painter->setOpacity(_strengthOn/100.0);
         if (_labelOn == "NUMBER") {
-            painter->drawText(QRect(0,0,width(), height()), Qt::AlignCenter, QString::number(_datarefValue, 'g', precision));
+            // qDebug() << "Value: " << _datarefValue << endl;                                                                     // this makes the value 2e+02 or something taking out for now.
+            painter->drawText(QRect(0,0,width(), height()), Qt::AlignCenter, QString::number(_datarefValue)); //QString::number(_datarefValue, 'g', precision));
         } else {
             painter->drawText(QRect(0,0,width(), height()), Qt::AlignCenter, _labelOn);
         }
