@@ -71,7 +71,7 @@ void Switch::storeSettings(QSettings &settings) {
     PanelItem::storeSettings(settings);
 
     settings.setValue("label", _label);
-    settings.setValue("dat1aref", _refname);
+    settings.setValue("dataref", _refname);
     settings.setValue("positionValue1", _positionValue1);
     settings.setValue("positionValue2", _positionValue2);
 }
@@ -119,7 +119,7 @@ void Switch::setDataRef(QString txt) {
         _dataref->unsubscribe();
         _dataref = 0;
     }
-    //DEBUG << "_refname: " << _refname << endl;
+    DEBUG << "_refname: " << _refname << "_dataref: " << _dataref << endl;
     _refname = txt;
     update();
 }
