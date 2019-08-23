@@ -45,17 +45,24 @@ void Switch::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
     // p << QPoint(-switchWidth/4, 0) << QPoint(switchWidth/4, 0)
     //   << QPoint(switchWidth/2, height()/2) << QPoint(-switchWidth/2, height()/2);
     // DEBUG << "Current Value: " << _value << " || position: " << _switchPosition << endl;
+
+    QImage myImage = QImage(":/images/FuelSwitch3.png");
+    QPixmap transparent(myImage.size());
+    transparent.fill(Qt::transparent);
+
     if(_value)
         painter->scale(1,-1);
     if(_value) {
         // painter->setBrush(QBrush(QImage(":/images/FuelSwitch.png")));
         painter->drawImage(QRect(-16, height()/4-circleSize, circleSize, circleSize),
-                           QImage(":/images/FuelSwitch.png"));
+                           myImage);
     } else {
         // painter->setBrush(QBrush(QImage(":/images/FuelSwitch.png").mirrored(true, false)));
                        // LEFT/RIGHT,    UP/DOWN,      WIDTH,      HIGHT
+
+        myImage.mirrored(true, false);
         painter->drawImage(QRect(-16, height()/4-circleSize, circleSize, circleSize),
-                           QImage(":/images/FuelSwitch.png").mirrored(true, false));
+                           myImage);
 }
     // painter->drawPolygon(p);
     painter->restore();

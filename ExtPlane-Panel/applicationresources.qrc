@@ -11,5 +11,6 @@
         <file>images/HSIPanel.png</file>
         <file>images/EICASPANEL.png</file>
         <file>images/ADIHSIPANEL.png</file>
+        <file>images/FuelSwitch3.png</file>
     </qresource>
 </RCC>

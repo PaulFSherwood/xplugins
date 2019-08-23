@@ -896,7 +896,8 @@ qrc_applicationresources.cpp: ../../ExtPlane-Panel/applicationresources.qrc \
 		../../ExtPlane-Panel/images/DR400_engine_generic.png \
 		../../ExtPlane-Panel/images/EICASPANEL.png \
 		../../ExtPlane-Panel/images/ADIHSIPANEL.png \
-		../../ExtPlane-Panel/images/FuelSwitch.png
+		../../ExtPlane-Panel/images/FuelSwitch.png \
+		../../ExtPlane-Panel/images/FuelSwitch3.png
 	C:\Qt\5.12.2\mingw73_64\bin\rcc.exe -name applicationresources ..\..\ExtPlane-Panel\applicationresources.qrc -o qrc_applicationresources.cpp
 
 compiler_moc_predefs_make_all: build/moc_predefs.h

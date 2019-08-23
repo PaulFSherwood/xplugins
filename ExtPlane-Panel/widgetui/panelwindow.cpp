@@ -77,7 +77,11 @@ PanelWindow::PanelWindow() : QGraphicsView(), scene(), statusMessage() {
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setSceneRect(0, 0, width(), height());
 
-    setBackgroundBrush(QBrush(QImage(":/images/ADIHSIPANEL.png")));
+    QImage myBackground = QImage(":/images/ADIHSIPANEL.png");
+    // QPixmap transparent(myBackground.size());
+    // transparent.fill(Qt::transparent);
+
+    setBackgroundBrush(QBrush(QImage(myBackground)));
     //setBackgroundBrush(QBrush(QImage(":/images/pedestal.png")));
     setFrameShape(QFrame::NoFrame);
 
