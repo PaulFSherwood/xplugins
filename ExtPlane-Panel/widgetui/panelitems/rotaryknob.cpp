@@ -41,12 +41,13 @@ void RotaryKnob::paint(QPainter *painter, const QStyleOptionGraphicsItem *option
 void RotaryKnob::storeSettings(QSettings &settings) {
     PanelItem::storeSettings(settings);
     settings.setValue("dataref", _refname);
+    settings.setValue("change", _change);
 }
 
 void RotaryKnob::loadSettings(QSettings &settings) {
     PanelItem::loadSettings(settings);
     setRef(settings.value("dataref", "").toString());
-    setChange(settings.value("change", 1).toDouble());
+    setChange(settings.value("change", ".01").toDouble());
 }
 
 void RotaryKnob::createSettings(QGridLayout *layout) {
