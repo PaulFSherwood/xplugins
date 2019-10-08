@@ -82,7 +82,7 @@ void IndicatorLight::paint(QPainter *painter, const QStyleOptionGraphicsItem *op
             painter->drawText(QRect(0,0,width(), height()), Qt::AlignCenter, _labelOff);
         }
     }
-    update();
+    //update();
 
     } painter->restore();
 
