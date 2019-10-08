@@ -358,13 +358,15 @@ void IndicatorLight::dataRefChanged(QString name, double val) {
     if(name != _datarefName) return;
 
     // On or off?
-    DEBUG << name << val;
+    DEBUG << name << "][" << val << "]_on: ";
     DEBUG << "_datarefValue: " << _datarefValue << "value: " << val << endl;
     _datarefValue = val;
     bool newOn = (_datarefValue > _threshold);
+    //DEBUG << _on << "||"; DEBUG << newOn;
     if(!this->panel()->hasAvionicsPower) newOn = false;
+    update();  // popped this out of the if so i can get upated variables, it was freezing before with the update in the paint function
     if(_on != newOn) {
         _on = newOn;
-        update();
+        //update();
     }
 }
