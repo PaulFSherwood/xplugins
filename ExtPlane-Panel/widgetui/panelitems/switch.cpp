@@ -23,6 +23,7 @@ Switch::Switch(ExtPlanePanel *panel, ExtPlaneConnection *conn) : PanelItem(panel
             _switchPosition = 1;
             _dataref = 0;
             setSize(100,30);
+            myImageLoc = ":/images/FuelSwitch3.png";
 }
 
 void Switch::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
@@ -46,7 +47,8 @@ void Switch::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
     //   << QPoint(switchWidth/2, height()/2) << QPoint(-switchWidth/2, height()/2);
     // DEBUG << "Current Value: " << _value << " || position: " << _switchPosition << endl;
 
-    QImage myImage = QImage(":/images/FuelSwitch3.png");
+
+    QImage myImage = QImage(myImageLoc);
     QPixmap transparent(myImage.size());
     transparent.fill(Qt::transparent);
 
@@ -81,6 +83,7 @@ void Switch::storeSettings(QSettings &settings) {
     settings.setValue("dataref", _refname);
     settings.setValue("positionValue1", _positionValue1);
     settings.setValue("positionValue2", _positionValue2);
+    settings.setValue("imageLocation", myImageLoc);
 }
 
 void Switch::loadSettings(QSettings &settings) {
@@ -90,6 +93,7 @@ void Switch::loadSettings(QSettings &settings) {
     setDataRef(settings.value("dataref", "1-sim/lights/landingR/switch").toString());
     setPositionValue1(settings.value("positionValue1", "0").toString());
     setPositionValue2(settings.value("positionValue2", "1").toString());
+    setImageLocation(settings.value("imageLocation", ":/images/FuelSwitch3.png").toString());
 }
 
 void Switch::createSettings(QGridLayout *layout) {
@@ -105,6 +109,8 @@ void Switch::createSettings(QGridLayout *layout) {
 
     createLineEditSetting(layout, "Value #1", _positionValue1, SLOT(setPositionValue1(QString)));
     createLineEditSetting(layout, "Value #2", _positionValue2, SLOT(setPositionValue2(QString)));
+
+    createLineEditSetting(layout, "Image Loc", myImageLoc, SLOT(setImageLocation(QString)));
 }
 
 void Switch::applySettings() {
@@ -128,6 +134,11 @@ void Switch::setDataRef(QString txt) {
     }
     DEBUG << "_refname: " << _refname << "_dataref: " << _dataref << endl;
     _refname = txt;
+    update();
+}
+
+void Switch::setImageLocation(QString txt) {
+    myImageLoc = txt;
     update();
 }
 

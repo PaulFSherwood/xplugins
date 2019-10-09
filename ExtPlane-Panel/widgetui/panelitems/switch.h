@@ -23,6 +23,7 @@ public slots:
     void setDataRef(QString ref);
     void setPositionValue1(QString val) { _positionValue1 = val; }
     void setPositionValue2(QString val) { _positionValue2 = val; }
+    void setImageLocation(QString ref);
 private slots:
     void valueChanged(QString ref, double newValue);
     void valueChanged(QString ref, QString newValue);
@@ -30,7 +31,7 @@ private:
     ExtPlaneClient _client;
     int _buttonId;
     int _switchPosition;
-    QString _label, _refname;
+    QString _label, _refname, myImageLoc;
     bool _value;
     QString _positionValue1;
     QString _positionValue2;
