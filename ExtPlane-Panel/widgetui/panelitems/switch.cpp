@@ -23,7 +23,7 @@ Switch::Switch(ExtPlanePanel *panel, ExtPlaneConnection *conn) : PanelItem(panel
             _switchPosition = 1;
             _dataref = 0;
             setSize(100,30);
-            myImageLoc = ":/images/FuelSwitch3.png";
+            myImageLoc = ":/images/FuelSwitch3.png";    // default image for loading
 }
 
 void Switch::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
@@ -48,21 +48,21 @@ void Switch::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
     // DEBUG << "Current Value: " << _value << " || position: " << _switchPosition << endl;
 
 
-    QImage myImage = QImage(myImageLoc);
-    QPixmap transparent(myImage.size());
+    QImage myImage = QImage(myImageLoc);    // pull image in and convert
+    QPixmap transparent(myImage.size());    // if the file has transparency use it
     transparent.fill(Qt::transparent);
 
     if(_value)
         painter->scale(1,-1);
     if(_value) {
-        // painter->setBrush(QBrush(QImage(":/images/FuelSwitch.png")));
+        // post the image
         painter->drawImage(QRect(-16, height()/4-circleSize, circleSize, circleSize),
                            myImage);
     } else {
         // painter->setBrush(QBrush(QImage(":/images/FuelSwitch.png").mirrored(true, false)));
                        // LEFT/RIGHT,    UP/DOWN,      WIDTH,      HIGHT
 
-        myImage.mirrored(true, false);
+        myImage.mirrored(true, false);  // flip the image when the value changes
         painter->drawImage(QRect(-16, height()/4-circleSize, circleSize, circleSize),
                            myImage);
 }
@@ -83,7 +83,7 @@ void Switch::storeSettings(QSettings &settings) {
     settings.setValue("dataref", _refname);
     settings.setValue("positionValue1", _positionValue1);
     settings.setValue("positionValue2", _positionValue2);
-    settings.setValue("imageLocation", myImageLoc);
+    settings.setValue("imageLocation", myImageLoc);         // save the image in the ini file with location information
 }
 
 void Switch::loadSettings(QSettings &settings) {
@@ -93,7 +93,7 @@ void Switch::loadSettings(QSettings &settings) {
     setDataRef(settings.value("dataref", "1-sim/lights/landingR/switch").toString());
     setPositionValue1(settings.value("positionValue1", "0").toString());
     setPositionValue2(settings.value("positionValue2", "1").toString());
-    setImageLocation(settings.value("imageLocation", ":/images/FuelSwitch3.png").toString());
+    setImageLocation(settings.value("imageLocation", ":/images/FuelSwitch3.png").toString());   // load image information / location
 }
 
 void Switch::createSettings(QGridLayout *layout) {
@@ -110,7 +110,7 @@ void Switch::createSettings(QGridLayout *layout) {
     createLineEditSetting(layout, "Value #1", _positionValue1, SLOT(setPositionValue1(QString)));
     createLineEditSetting(layout, "Value #2", _positionValue2, SLOT(setPositionValue2(QString)));
 
-    createLineEditSetting(layout, "Image Loc", myImageLoc, SLOT(setImageLocation(QString)));
+    createLineEditSetting(layout, "Image Loc", myImageLoc, SLOT(setImageLocation(QString)));        // show the settings in the gui
 }
 
 void Switch::applySettings() {
@@ -138,7 +138,7 @@ void Switch::setDataRef(QString txt) {
 }
 
 void Switch::setImageLocation(QString txt) {
-    myImageLoc = txt;
+    myImageLoc = txt;       // save the location information fro the gui
     update();
 }
 

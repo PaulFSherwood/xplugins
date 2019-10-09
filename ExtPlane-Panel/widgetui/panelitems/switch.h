@@ -31,7 +31,7 @@ private:
     ExtPlaneClient _client;
     int _buttonId;
     int _switchPosition;
-    QString _label, _refname, myImageLoc;
+    QString _label, _refname, myImageLoc;   // added myImageLoc to save image locations
     bool _value;
     QString _positionValue1;
     QString _positionValue2;
