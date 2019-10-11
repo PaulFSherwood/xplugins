@@ -96,7 +96,7 @@ void MenuButton::mousePressEvent ( QGraphicsSceneMouseEvent * event ) {
     connect(settingsButton, SIGNAL(clicked()), this, SLOT(closeCurrentMenu()));
     layout->addWidget(settingsButton);
 
-    QPushButton *setBGImageButton = new QPushButton("Set BG Image", menu);
+    QPushButton *setBGImageButton = new QPushButton("Change Background", menu);
     connect(setBGImageButton, SIGNAL(clicked()), panelWindow, SLOT(loadBGImage()));
     layout->addWidget(setBGImageButton);
 
