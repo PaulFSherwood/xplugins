@@ -77,6 +77,7 @@ PanelWindow::PanelWindow() : QGraphicsView(), scene(), statusMessage() {
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setSceneRect(0, 0, width(), height());
 
+    // DEFAULT IMAGE IS LOADED
     QImage myBackground = QImage(":/images/ADIHSIPANEL.png");
     // QPixmap transparent(myBackground.size());
     // transparent.fill(Qt::transparent);
@@ -519,6 +520,14 @@ void PanelWindow::loadProfile(QString filename) {
     // Register this file as the last loaded...
     appSettings->setValue("lastloadedprofile",filename);
     dirty = false;
+
+    // Load in the background picture from our file
+    QImage myBackground = QImage(profileSettings->value("BGImage").toString());
+    if (profileSettings->value("BGImage").toString() != NULL){
+        setBackgroundBrush(QBrush(QImage(myBackground)));
+    }
+
+
 }
 
 void PanelWindow::loadBGImage() {                     // added so we can switch teh background picture
@@ -535,8 +544,10 @@ void PanelWindow::loadBGImage(QString filename) {     // added so we can switch 
         connectionMessage(QString("File %1 does not exist.").arg(filename));
         return;
     }
-    setBackgroundBrush(QBrush(QImage(filename)));
 
+    // Save the background picture that we chose to the ini file for future loading.
+    setBackgroundBrush(QBrush(QImage(filename)));
+    profileSettings->setValue("BGImage", filename);
 }
 
 void PanelWindow::newProfile() {
